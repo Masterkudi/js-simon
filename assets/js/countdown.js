@@ -2,15 +2,15 @@
 function updateClock() {
 
     timer.innerHTML =
-        now = new Date(); // Data corrente
-        tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 9, 30); // Domani alle 9:30
-        timeDiff = tomorrow - now; // Differenza in millisecondi
+        now = new Date(); 
+        tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 9, 30);
+        timeDiff = tomorrow - now;
   
         console.log("clock updated");
   }
 
 function setTimeout() {
-    timeDiff -= 1000; // Sottrai un secondo
+    timeDiff -= 1000; 
     if (timeDiff > 0) {
       const seconds = Math.floor((timeDiff / 1000) % 60);
       const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
@@ -29,16 +29,16 @@ function setTimeout() {
 
   }
   
-  const interval = setInterval(updateCountdown, 1000); // Esegue updateCountdown ogni secondo
+  const interval = setInterval(updateCountdown, 1000); 
 */
 
 function updateCountdown() {
-    const now = new Date();
-    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 10, 0);
-    let timeDiff = tomorrow - now;
+    const now = new Date(); // Data corrente
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 10, 0); // Domani alle 9:30
+    let timeDiff = tomorrow - now; // Differenza in millisecondi
   
     const timer = document.getElementById("timer");
-  
+
     if (timeDiff > 0) {
       const seconds = Math.floor((timeDiff / 1000) % 60);
       const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
@@ -53,5 +53,7 @@ function updateCountdown() {
     }
   }
   
-  const interval = setInterval(updateCountdown, 1000);
+  const interval = setInterval(updateCountdown, 1000); // Esegue updateCountdown ogni secondo
+  
+  
   
